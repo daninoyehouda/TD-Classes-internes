@@ -43,7 +43,7 @@ public class DirMonitor {
 	    			// TODO Auto-generated method stub
 	    			if(Files.size(entry) > n) {
 	    				return true;
-	    			}
+	    			} 
 	    			return false;
 	    		}
 	    		

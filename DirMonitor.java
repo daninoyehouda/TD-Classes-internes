@@ -14,6 +14,7 @@ public class DirMonitor {
         this.path = path;
     }
     
+    
     public void readDir() {
     	try {
 			DirectoryStream<Path> stream = Files.newDirectoryStream(path, new PrefixFilter(1000));

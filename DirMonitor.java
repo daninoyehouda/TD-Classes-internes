@@ -16,6 +16,7 @@ public class DirMonitor {
     
     
     public void readDir() {
+    	/*
     	class PrefixFilter implements DirectoryStream.Filter<Path>{
     		private int n;
     		public PrefixFilter(int n){
@@ -32,9 +33,21 @@ public class DirMonitor {
     		}
     		
     	}
-
+		*/
+    	final int n = 1000;
     	try {
-			DirectoryStream<Path> stream = Files.newDirectoryStream(path, new PrefixFilter(1000));
+			DirectoryStream<Path> stream = Files.newDirectoryStream(path, new DirectoryStream.Filter<Path>(){
+    		
+	    		@Override
+	    		public boolean accept(Path entry) throws IOException {
+	    			// TODO Auto-generated method stub
+	    			if(Files.size(entry) > n) {
+	    				return true;
+	    			}
+	    			return false;
+	    		}
+	    		
+	    	});
 			for(Path file:stream) {
 				 System.out.println(file.getFileName());
 			}

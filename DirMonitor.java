@@ -16,7 +16,7 @@ public class DirMonitor {
     
     
     public void readDir() {
-    	/*
+    	/*// exo 2.b
     	class PrefixFilter implements DirectoryStream.Filter<Path>{
     		private int n;
     		public PrefixFilter(int n){
